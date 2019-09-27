@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "5acdcfaa0cb87",
+        "Name": "TA002 - Temporary register email",
+        "Type": "EMAIL",
+        "LIM_id": "83ef69d1-2c5e-11e5-ad20-22000a7a05f5",
+        "Editable": true,
+        "LIM_name": "Portsmouth",
+        "Category": "Contensus",
+        "data_type": "integration-lookup",
+        "allow_offline": 0,
+        "Output_template": "{\"lookup_validation\":\"0\",\"subject\":\"New The council - apply for the internal agency application submitted\",\"fromName\":\"{NoReplyEmail_N} \",\"from\":\"{NoReplyEmail} \",\"recipients_to\":\"Temp.Agency@portsmouthcc.gov.uk \",\"recipients_cc\":\"\",\"recipients_bcc\":\"\",\"pdf_attachments\":\"5accc31fa2227\",\"body\":\"<div style=\\\"font-family: arial, helvetica, sans-serif; font-size: 12pt; white-space: pre-wrap;\\\">\\n<div>Dear Agency,</div>\\n<div></div>\\n<p>A new Apply for the temporary register form has been submitted.</p>\\n<div></div>\\n<p>Yours sincerely,</p>\\n<p>Portsmouth City Council</p>\\n</div>\",\"attachments\":\"{CV}|{CV2}\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"Daniela.Dutu@portsmouthcc.gov.uk\"}"
+    }
+]
