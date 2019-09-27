@@ -11,7 +11,7 @@
     "date_due_warn": "",
     "showCaseReference": false,
     "isSubform": false,
-    "notes": "made telephone mandatory",
+    "notes": "amended form and pdf (added consent box to contact references)",
     "initial_stage": "Stage 1",
     "initial_stage_id": "AF-Stage-6ff651dc-b962-43d7-8804-17cbca52718c",
     "prefix": "TA",
@@ -443,7 +443,7 @@
                     "label": "Parameters for customer details",
                     "dataName": "param_CD",
                     "labelPosition": "alignLeft",
-                    "defaultValue": "dNm dAp dCi mFn mLn mAd mOc",
+                    "defaultValue": "dNm dAp dCi mFn mLn mAd mEm mTMn",
                     "helpText": "",
                     "hidden": true,
                     "readOnly": false,
@@ -5217,8 +5217,8 @@
                     "labelPosition": "alignLeft",
                     "defaultValue": "concat({customer/Phone_Number_out} , ' ' ,{customer/Mobile_Number_out})\n",
                     "helpText": "",
-                    "hidden": false,
-                    "readOnly": false,
+                    "hidden": true,
+                    "readOnly": true,
                     "summaryField": false,
                     "displayName": true,
                     "outerClass": null,
@@ -6473,6 +6473,56 @@
                     "validationMaskMessageValue": "Select..."
                   },
                   "id": "AF-Field-f914ea5e-ad8c-4dd9-89d0-9aa71464d962"
+                },
+                {
+                  "type": "checkbox",
+                  "props": {
+                    "minimumChoices": "",
+                    "maximumChoices": "",
+                    "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                    "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                    "label": "I consent to Portsmouth City Council contacting my named referees in accordance with its normal recruitment and selection policy.  I understand that my referees will not be contacted before a conditional offer of appointment is made except where I have provided written consent to do so on my application form. ",
+                    "dataName": "select1",
+                    "labelPosition": "alignAbove",
+                    "defaultType": "specific",
+                    "defaultValue": null,
+                    "defaultValueText": null,
+                    "listSource": "one-time-list",
+                    "helpText": "",
+                    "readOnly": false,
+                    "allowOther": false,
+                    "summaryField": false,
+                    "lookup": null,
+                    "lookupCondition": null,
+                    "lookupButton": null,
+                    "preventRunningOnInitialisation": null,
+                    "noResultsMessage": null,
+                    "tokenName": null,
+                    "listOfValues": [
+                      {
+                        "label": " ",
+                        "value": "yes"
+                      }
+                    ],
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "displayStyle": "horizontal",
+                    "styleAsButton": null,
+                    "hideWhenBlank": null,
+                    "hidden": null,
+                    "displayCondition": null,
+                    "selectCondition": null,
+                    "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": true,
+                    "mandatoryMessage": "This information is required"
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-15586aa8-2b53-4b50-92d4-32a0833a837c"
                 }
               ]
             },
@@ -7129,6 +7179,11 @@
       "routes": {},
       "populateFields": [
         {
+          "label": "Where did you hear about us?",
+          "dataName": "whereHear",
+          "populated": true
+        },
+        {
           "label": "What area are you interested in?",
           "dataName": "what",
           "populated": true
@@ -7144,38 +7199,43 @@
           "populated": true
         },
         {
-          "label": "Tell us the days you're available. You can tick more than one",
-          "dataName": "showDays",
+          "label": "telephone mandatory",
+          "dataName": "telephoneMandatory",
           "populated": true
         },
         {
-          "label": "Tell us the hours you're available. You can tick more than one",
-          "dataName": "showHours",
+          "label": "Tick the traits that you feel describe you best (maximum of 4) ",
+          "dataName": "select2",
           "populated": true
         },
         {
-          "label": "Please specify",
-          "dataName": "pleaseSpecify",
+          "label": "You and a colleague have been working on a report together. The deadline is tomorrow. You have just got to work and found out that your colleague is ill and won’t be in today. The report is almost complete but your colleague was due to add a few extra pieces of information to it. You aren’t as familiar with this information as your colleague.  You were both planning on meeting with your manager this afternoon to talk her through the report before you submit it to your Director. Do you…",
+          "dataName": "report",
           "populated": true
         },
         {
-          "label": "Tell us the date you're available",
+          "label": "What hours are you looking for?",
+          "dataName": "whatHours",
+          "populated": true
+        },
+        {
+          "label": "Please provide any further details about what hours you can work",
+          "dataName": "detailsHours",
+          "populated": true
+        },
+        {
+          "label": "How long  are you available for?",
+          "dataName": "howLong",
+          "populated": true
+        },
+        {
+          "label": "When can you start?",
           "dataName": "availableFrom",
           "populated": true
         },
         {
-          "label": "Tell us the shortest period of employment you will accept",
-          "dataName": "shortestPeriod",
-          "populated": true
-        },
-        {
-          "label": "Tell us the longest period of employment you will accept",
-          "dataName": "longestPeriod",
-          "populated": true
-        },
-        {
-          "label": "Are you a student?",
-          "dataName": "student",
+          "label": "Select one option to list your employment and education history",
+          "dataName": "oneOption",
           "populated": true
         },
         {
@@ -7184,22 +7244,12 @@
           "populated": true
         },
         {
-          "label": "Employment history",
-          "dataName": "employment",
+          "label": "Full employment history - please give information of employer, employment dates, reason for leaving, and explain any gaps:",
+          "dataName": "employmentHistory",
           "populated": true
         },
         {
-          "label": "Will you be working with another employer while you're on our register?",
-          "dataName": "another",
-          "populated": true
-        },
-        {
-          "label": "Are you registered with any other agencies?",
-          "dataName": "agencies",
-          "populated": true
-        },
-        {
-          "label": "Education and qualifications",
+          "label": "Please enter your education and qualifications",
           "dataName": "education",
           "populated": true
         },
@@ -7209,8 +7259,13 @@
           "populated": true
         },
         {
-          "label": "What Microsoft Offices Packages have you got working knowledge of and how have they been used in your previous employment?",
+          "label": "What Microsoft Offices Packages have you got working knowledge of ?",
           "dataName": "office",
+          "populated": true
+        },
+        {
+          "label": "What skills and experience do you have that would make you suitable for this work? ",
+          "dataName": "skills",
           "populated": true
         },
         {
@@ -7229,78 +7284,13 @@
           "populated": true
         },
         {
-          "label": "What skills and experience do you have that would make you suitable for this work? ",
-          "dataName": "skills",
+          "label": "Reference 1",
+          "dataName": "reference1",
           "populated": true
         },
         {
-          "label": "Tick the traits that you feel describe you best (maximum of 4) ",
-          "dataName": "select",
-          "populated": true
-        },
-        {
-          "label": "Litter around entrance",
-          "dataName": "litter",
-          "populated": true
-        },
-        {
-          "label": "Dirty floor in lobby/entrance",
-          "dataName": "dirtyLobby",
-          "populated": true
-        },
-        {
-          "label": "Spillage in stairwell",
-          "dataName": "spillage",
-          "populated": true
-        },
-        {
-          "label": "Dirty floors on 1st floor",
-          "dataName": "dirtyFloors",
-          "populated": true
-        },
-        {
-          "label": "validation1",
-          "dataName": "validation1",
-          "populated": true
-        },
-        {
-          "label": "validation2",
-          "dataName": "validation2",
-          "populated": true
-        },
-        {
-          "label": "validation3",
-          "dataName": "validation3",
-          "populated": true
-        },
-        {
-          "label": "validation4",
-          "dataName": "validation4",
-          "populated": true
-        },
-        {
-          "label": "validation5",
-          "dataName": "validation5",
-          "populated": true
-        },
-        {
-          "label": "validation6",
-          "dataName": "validation6",
-          "populated": true
-        },
-        {
-          "label": "validationField",
-          "dataName": "validationField",
-          "populated": true
-        },
-        {
-          "label": "Tick the traits that you feel describe you best (maximum of 4) ",
-          "dataName": "select2",
-          "populated": true
-        },
-        {
-          "label": "You and a colleague have been working on a report together. The deadline is tomorrow. You have just got to work and found out that your colleague is ill and won’t be in today. The report is almost complete but your colleague was due to add a few extra pieces of information to it. You aren’t as familiar with this information as your colleague.  You were both planning on meeting with your manager this afternoon to talk her through the report before you submit it to your Director. Do you…",
-          "dataName": "report",
+          "label": "Reference 2",
+          "dataName": "reference2",
           "populated": true
         },
         {
@@ -7319,33 +7309,23 @@
           "populated": true
         },
         {
-          "label": "References",
-          "dataName": "references",
+          "label": "I certify to the best of my knowledge and belief, I am not related to, or in a relationship with, any Councillor, or employee of Portsmouth City Council. ",
+          "dataName": "declaration1",
           "populated": true
         },
         {
-          "label": "Are you free to work for us?",
-          "dataName": "free",
+          "label": " I declare that I am related to, or in a relationship with, the following Councillor or employee of Portsmouth City Council ",
+          "dataName": "declaration2",
           "populated": true
         },
         {
-          "label": "Please tell us if you are covered by any restrictive covenants, such as you are not entitled to work within a particular location for a specified time due to a previous contract of employment.",
-          "dataName": "restrictive",
+          "label": "Declaration mandatory",
+          "dataName": "declarationMand",
           "populated": true
         },
         {
-          "label": "National Insurance number",
-          "dataName": "NIC",
-          "populated": true
-        },
-        {
-          "label": "Please give details",
-          "dataName": "giveDetails",
-          "populated": true
-        },
-        {
-          "label": "Tick this box to confirm that you agree with the  above",
-          "dataName": "declaration",
+          "label": "Relationship",
+          "dataName": "relationship",
           "populated": true
         }
       ]
