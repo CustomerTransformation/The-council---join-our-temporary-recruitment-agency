@@ -11,7 +11,7 @@
     "date_due_warn": "",
     "showCaseReference": false,
     "isSubform": false,
-    "notes": "made telephone mandatory",
+    "notes": "added confirmationPolicy tick box in the introduction",
     "initial_stage": "Stage 1",
     "initial_stage_id": "AF-Stage-6ff651dc-b962-43d7-8804-17cbca52718c",
     "prefix": "TA",
@@ -26,7 +26,7 @@
       "props": {
         "form": "AF-Form-6191e569-ff92-4e9c-b85d-28382c3e1d63",
         "xpos": 21,
-        "ypos": 19,
+        "ypos": 20,
         "group": null,
         "integrations": [
           {
@@ -278,11 +278,61 @@
                     "outerClass": "",
                     "width": "",
                     "showInSummary": false,
-                    "content": "<p>Portsmouth City Council Recruitment Agency will process your personal information in line with national data protection legislation. The details you give us will be held in a secure system and will only be shared with other organisations where the law allows. To find out more  <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/ext/documents-external/cou-privacy-notice-for-recruitment.pdf\">read our data protection policy </a></p>",
+                    "content": "<p class=\"hidden\">Portsmouth City Council Recruitment Agency will process your personal information in line with national data protection legislation. The details you give us will be held in a secure system and will only be shared with other organisations where the law allows. To find out more  <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/ext/documents-external/cou-privacy-notice-for-recruitment.pdf\">read our data protection policy </a></p>\n\n<p>Portsmouth City Council will process your personal information appropriately and legally in accordance with the Data Protection Act 2018, GDPR the National Fraud Initiative (details of which can be found at <a target=\"_blank\" href=\"http://www.audit-commission.gov.uk/nfi\">www.audit-commission.gov.uk/nfi</a>.) and other relevant legislation. The details you provide will be held in a secure system or database and will only be shared with other organisations where the law allows.</p>\n\n<p>For more information on your rights and how we use the information you have provided please visit the <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/ext/your-council/careers-portal/careers-portal\">PCC careers portal</a> where you can view the <a target=\"_blank\" href=\"https://www.portsmouth.gov.uk/ext/documents-external/cou-privacy-notice-for-recruitment.pdf\">recruitment privacy notice</a>.</p>\n\n<p>The Portsmouth Information Sharing Framework which sets out the conditions under which we will share information with other organisations is available on the council's website.  The Council may share your information with relevant departments to help develop new services or improve existing services.</p> \n\n<p>You should be aware that we may be required to disclose your personal information without your consent for the purposes of preventing or detecting crime/fraud or apprehending and prosecuting offenders (for example to the Police, Audit Commission or Department for Work and Pension or as part of the National Fraud Initiatives) or where we have a statutory duty to do so.</p>",
                     "displayCondition": null
                   },
                   "conditionInputs": [],
                   "id": "AF-Field-77526318-9e1c-49ca-87f5-bffcd2ee4f14"
+                },
+                {
+                  "type": "checkbox",
+                  "props": {
+                    "minimumChoices": null,
+                    "maximumChoices": null,
+                    "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                    "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                    "label": "Confirmation",
+                    "dataName": "confirmationPolicy",
+                    "labelPosition": "hideLabel",
+                    "defaultType": "specific",
+                    "defaultValue": null,
+                    "defaultValueText": null,
+                    "listSource": "one-time-list",
+                    "helpText": "",
+                    "readOnly": false,
+                    "allowOther": false,
+                    "summaryField": false,
+                    "lookup": null,
+                    "lookupCondition": null,
+                    "lookupButton": null,
+                    "preventRunningOnInitialisation": null,
+                    "noResultsMessage": null,
+                    "tokenName": null,
+                    "listOfValues": [
+                      {
+                        "label": "I have read and understand the above",
+                        "value": "I have read and understand the above"
+                      }
+                    ],
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "displayStyle": "horizontal",
+                    "styleAsButton": null,
+                    "hideWhenBlank": null,
+                    "hidden": null,
+                    "displayCondition": null,
+                    "selectCondition": null,
+                    "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": true,
+                    "mandatoryMessage": "This field is required"
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-3a16864c-5a71-4ff1-925b-e41d610e10d5"
                 },
                 {
                   "type": "html",
@@ -443,7 +493,7 @@
                     "label": "Parameters for customer details",
                     "dataName": "param_CD",
                     "labelPosition": "alignLeft",
-                    "defaultValue": "dNm dAp dCi mFn mLn mAd mOc",
+                    "defaultValue": "dNm dAp dCi mFn mLn mAd mEm mTMn",
                     "helpText": "",
                     "hidden": true,
                     "readOnly": false,
@@ -1189,6 +1239,51 @@
                               "id": "AF-Field-96b10f88-d9f3-40c5-9a37-02d35fc93a41"
                             },
                             {
+                              "type": "text",
+                              "props": {
+                                "label": "Default for Address In Out",
+                                "dataName": "defaultAddressIn",
+                                "labelPosition": "alignLeft",
+                                "defaultValue": "if({subParam} contains 'ip',0,\n           if({subParam} contains 'op',1,\n                     if({subParam} contains 'ov',2,'')))",
+                                "helpText": "",
+                                "hidden": true,
+                                "readOnly": true,
+                                "summaryField": false,
+                                "displayName": true,
+                                "outerClass": null,
+                                "labelClass": null,
+                                "inputClass": null,
+                                "outputFormat": "normal",
+                                "currencyPrefix": null,
+                                "width": null,
+                                "inputMask": null,
+                                "inputMaskPlaceholder": null,
+                                "lengthCount": null,
+                                "hideWhenBlank": null,
+                                "displayCondition": null,
+                                "mandatoryCondition": null,
+                                "readonlyCondition": null,
+                                "mandatory": false,
+                                "minimumLength": "",
+                                "maximumLength": "",
+                                "validationCondition": "",
+                                "validationMask": "",
+                                "mandatoryMessage": "This information is required",
+                                "minimumLengthMessage": "Please input at least _min_value_ characters",
+                                "maximumLengthMessage": "Please input no more than _max_value_ characters",
+                                "validationMaskMessage": "Please input text of the format: _validation_mask_",
+                                "validationConditionMessage": "This field is invalid",
+                                "validationMaskMessageValue": "Select...",
+                                "separatedDateDefaultValue": {
+                                  "day": "",
+                                  "month": "",
+                                  "year": ""
+                                }
+                              },
+                              "conditionInputs": [],
+                              "id": "AF-Field-90faf09d-7218-48c5-99ad-e1a05ecfc308"
+                            },
+                            {
                               "type": "radio",
                               "props": {
                                 "label": "Is the address",
@@ -1196,7 +1291,7 @@
                                 "labelPosition": "alignLeft",
                                 "defaultType": "text",
                                 "defaultValue": null,
-                                "defaultValueText": "",
+                                "defaultValueText": "{defaultAddressIn}",
                                 "listSource": "one-time-list",
                                 "helpText": "",
                                 "readOnly": false,
@@ -5217,8 +5312,8 @@
                     "labelPosition": "alignLeft",
                     "defaultValue": "concat({customer/Phone_Number_out} , ' ' ,{customer/Mobile_Number_out})\n",
                     "helpText": "",
-                    "hidden": false,
-                    "readOnly": false,
+                    "hidden": true,
+                    "readOnly": true,
                     "summaryField": false,
                     "displayName": true,
                     "outerClass": null,
@@ -6473,6 +6568,56 @@
                     "validationMaskMessageValue": "Select..."
                   },
                   "id": "AF-Field-f914ea5e-ad8c-4dd9-89d0-9aa71464d962"
+                },
+                {
+                  "type": "checkbox",
+                  "props": {
+                    "minimumChoices": "",
+                    "maximumChoices": "",
+                    "minimumChoicesMessage": "Please select at least _min_value_ choices",
+                    "maximumChoicesMessage": "Please select no more than _max_value_ choices",
+                    "label": "I consent to Portsmouth City Council contacting my named referees in accordance with its normal recruitment and selection policy.  I understand that my referees will not be contacted before a conditional offer of appointment is made except where I have provided written consent to do so on my application form. ",
+                    "dataName": "select1",
+                    "labelPosition": "alignAbove",
+                    "defaultType": "specific",
+                    "defaultValue": null,
+                    "defaultValueText": null,
+                    "listSource": "one-time-list",
+                    "helpText": "",
+                    "readOnly": false,
+                    "allowOther": false,
+                    "summaryField": false,
+                    "lookup": null,
+                    "lookupCondition": null,
+                    "lookupButton": null,
+                    "preventRunningOnInitialisation": null,
+                    "noResultsMessage": null,
+                    "tokenName": null,
+                    "listOfValues": [
+                      {
+                        "label": " ",
+                        "value": "yes"
+                      }
+                    ],
+                    "displayName": true,
+                    "outerClass": null,
+                    "labelClass": null,
+                    "inputClass": null,
+                    "width": null,
+                    "displayStyle": "horizontal",
+                    "styleAsButton": null,
+                    "hideWhenBlank": null,
+                    "hidden": null,
+                    "displayCondition": null,
+                    "selectCondition": null,
+                    "weAdviseAgainstTheUseOfSelectConditions;PleaseUseDisplayConditionsInstead.": null,
+                    "mandatoryCondition": null,
+                    "readonlyCondition": null,
+                    "mandatory": true,
+                    "mandatoryMessage": "This information is required"
+                  },
+                  "conditionInputs": [],
+                  "id": "AF-Field-15586aa8-2b53-4b50-92d4-32a0833a837c"
                 }
               ]
             },
@@ -7129,6 +7274,11 @@
       "routes": {},
       "populateFields": [
         {
+          "label": "Where did you hear about us?",
+          "dataName": "whereHear",
+          "populated": true
+        },
+        {
           "label": "What area are you interested in?",
           "dataName": "what",
           "populated": true
@@ -7144,38 +7294,43 @@
           "populated": true
         },
         {
-          "label": "Tell us the days you're available. You can tick more than one",
-          "dataName": "showDays",
+          "label": "telephone mandatory",
+          "dataName": "telephoneMandatory",
           "populated": true
         },
         {
-          "label": "Tell us the hours you're available. You can tick more than one",
-          "dataName": "showHours",
+          "label": "Tick the traits that you feel describe you best (maximum of 4) ",
+          "dataName": "select2",
           "populated": true
         },
         {
-          "label": "Please specify",
-          "dataName": "pleaseSpecify",
+          "label": "You and a colleague have been working on a report together. The deadline is tomorrow. You have just got to work and found out that your colleague is ill and won’t be in today. The report is almost complete but your colleague was due to add a few extra pieces of information to it. You aren’t as familiar with this information as your colleague.  You were both planning on meeting with your manager this afternoon to talk her through the report before you submit it to your Director. Do you…",
+          "dataName": "report",
           "populated": true
         },
         {
-          "label": "Tell us the date you're available",
+          "label": "What hours are you looking for?",
+          "dataName": "whatHours",
+          "populated": true
+        },
+        {
+          "label": "Please provide any further details about what hours you can work",
+          "dataName": "detailsHours",
+          "populated": true
+        },
+        {
+          "label": "How long  are you available for?",
+          "dataName": "howLong",
+          "populated": true
+        },
+        {
+          "label": "When can you start?",
           "dataName": "availableFrom",
           "populated": true
         },
         {
-          "label": "Tell us the shortest period of employment you will accept",
-          "dataName": "shortestPeriod",
-          "populated": true
-        },
-        {
-          "label": "Tell us the longest period of employment you will accept",
-          "dataName": "longestPeriod",
-          "populated": true
-        },
-        {
-          "label": "Are you a student?",
-          "dataName": "student",
+          "label": "Select one option to list your employment and education history",
+          "dataName": "oneOption",
           "populated": true
         },
         {
@@ -7184,22 +7339,12 @@
           "populated": true
         },
         {
-          "label": "Employment history",
-          "dataName": "employment",
+          "label": "Full employment history - please give information of employer, employment dates, reason for leaving, and explain any gaps:",
+          "dataName": "employmentHistory",
           "populated": true
         },
         {
-          "label": "Will you be working with another employer while you're on our register?",
-          "dataName": "another",
-          "populated": true
-        },
-        {
-          "label": "Are you registered with any other agencies?",
-          "dataName": "agencies",
-          "populated": true
-        },
-        {
-          "label": "Education and qualifications",
+          "label": "Please enter your education and qualifications",
           "dataName": "education",
           "populated": true
         },
@@ -7209,8 +7354,13 @@
           "populated": true
         },
         {
-          "label": "What Microsoft Offices Packages have you got working knowledge of and how have they been used in your previous employment?",
+          "label": "What Microsoft Offices Packages have you got working knowledge of ?",
           "dataName": "office",
+          "populated": true
+        },
+        {
+          "label": "What skills and experience do you have that would make you suitable for this work? ",
+          "dataName": "skills",
           "populated": true
         },
         {
@@ -7229,78 +7379,18 @@
           "populated": true
         },
         {
-          "label": "What skills and experience do you have that would make you suitable for this work? ",
-          "dataName": "skills",
+          "label": "Reference 1",
+          "dataName": "reference1",
           "populated": true
         },
         {
-          "label": "Tick the traits that you feel describe you best (maximum of 4) ",
-          "dataName": "select",
+          "label": "Reference 2",
+          "dataName": "reference2",
           "populated": true
         },
         {
-          "label": "Litter around entrance",
-          "dataName": "litter",
-          "populated": true
-        },
-        {
-          "label": "Dirty floor in lobby/entrance",
-          "dataName": "dirtyLobby",
-          "populated": true
-        },
-        {
-          "label": "Spillage in stairwell",
-          "dataName": "spillage",
-          "populated": true
-        },
-        {
-          "label": "Dirty floors on 1st floor",
-          "dataName": "dirtyFloors",
-          "populated": true
-        },
-        {
-          "label": "validation1",
-          "dataName": "validation1",
-          "populated": true
-        },
-        {
-          "label": "validation2",
-          "dataName": "validation2",
-          "populated": true
-        },
-        {
-          "label": "validation3",
-          "dataName": "validation3",
-          "populated": true
-        },
-        {
-          "label": "validation4",
-          "dataName": "validation4",
-          "populated": true
-        },
-        {
-          "label": "validation5",
-          "dataName": "validation5",
-          "populated": true
-        },
-        {
-          "label": "validation6",
-          "dataName": "validation6",
-          "populated": true
-        },
-        {
-          "label": "validationField",
-          "dataName": "validationField",
-          "populated": true
-        },
-        {
-          "label": "Tick the traits that you feel describe you best (maximum of 4) ",
-          "dataName": "select2",
-          "populated": true
-        },
-        {
-          "label": "You and a colleague have been working on a report together. The deadline is tomorrow. You have just got to work and found out that your colleague is ill and won’t be in today. The report is almost complete but your colleague was due to add a few extra pieces of information to it. You aren’t as familiar with this information as your colleague.  You were both planning on meeting with your manager this afternoon to talk her through the report before you submit it to your Director. Do you…",
-          "dataName": "report",
+          "label": "I consent to Portsmouth City Council contacting my named referees in accordance with its normal recruitment and selection policy.  I understand that my referees will not be contacted before a conditional offer of appointment is made except where I have provided written consent to do so on my application form. ",
+          "dataName": "select1",
           "populated": true
         },
         {
@@ -7319,33 +7409,23 @@
           "populated": true
         },
         {
-          "label": "References",
-          "dataName": "references",
+          "label": "I certify to the best of my knowledge and belief, I am not related to, or in a relationship with, any Councillor, or employee of Portsmouth City Council. ",
+          "dataName": "declaration1",
           "populated": true
         },
         {
-          "label": "Are you free to work for us?",
-          "dataName": "free",
+          "label": " I declare that I am related to, or in a relationship with, the following Councillor or employee of Portsmouth City Council ",
+          "dataName": "declaration2",
           "populated": true
         },
         {
-          "label": "Please tell us if you are covered by any restrictive covenants, such as you are not entitled to work within a particular location for a specified time due to a previous contract of employment.",
-          "dataName": "restrictive",
+          "label": "Declaration mandatory",
+          "dataName": "declarationMand",
           "populated": true
         },
         {
-          "label": "National Insurance number",
-          "dataName": "NIC",
-          "populated": true
-        },
-        {
-          "label": "Please give details",
-          "dataName": "giveDetails",
-          "populated": true
-        },
-        {
-          "label": "Tick this box to confirm that you agree with the  above",
-          "dataName": "declaration",
+          "label": "Relationship",
+          "dataName": "relationship",
           "populated": true
         }
       ]
