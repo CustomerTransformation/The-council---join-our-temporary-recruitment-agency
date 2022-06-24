@@ -1,0 +1,16 @@
+[
+    {
+        "ID": "62a31b64aa473",
+        "Name": "TA005 - NEW email to the business from Join the temp agency",
+        "Type": "EMAIL",
+        "LIM_id": "83ef69d1-2c5e-11e5-ad20-22000a7a05f5",
+        "Editable": true,
+        "LIM_name": "Portsmouth",
+        "Category": "",
+        "data_type": "integration-lookup",
+        "allow_offline": 0,
+        "Output_template": "{\"subject\":\" {form_name} form received - {case_ref}{integrationTEST}\",\"fromName\":\"{NoReplyEmail_N} \",\"from\":\"{NoReplyEmail}\",\"recipients_to\":\"Temp.Agency@portsmouthcc.gov.uk \",\"recipients_cc\":\"\",\"recipients_bcc\":\"\",\"pdf_attachments\":\"62a208bd028c7\",\"body\":\"<div style=\\\"font-family: arial, helvetica, sans-serif; font-size: 12pt; white-space: pre-wrap;\\\">\\n<p>Hello,</p>\\n\\n<p>A new {form_name} form has been received, please view the attached PDF.</p>\\n\\n<p>The reference number is {case_ref}.</p>\\n\\n<p>Yours sincerely,</p>\\n\\n<p>Portsmouth City Council</p>\\n</div>\",\"attachments\":\"{CV}\"}",
+        "log_only_on_error": 0,
+        "error_notification": "{\"LIM_id\":\"3f07ecf4-0dfa-11e2-b0b9-12313b03ed59\",\"LIM_name\":\"LIM14\",\"recipients_to\":\"Daniela.Dutu@portsmouthcc.gov.uk\"}"
+    }
+]
